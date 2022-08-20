@@ -32,6 +32,47 @@
 	{
 		padding: 30px;
 	}
+
+	/**/
+	.center
+        {
+          margin: auto;
+          width: 60%;
+          text-align: center;
+          padding: 30px;
+        }
+        table,th,td
+        {
+          border: 2px solid #864879;
+        }
+        .th_deg
+        {/*font-size: 20px;
+          padding: 5px;*/
+          background: #31112C;
+        }
+        .img_deg
+        {
+          height: 70px;
+          width:  100px;
+        }
+      /*.table_deg*/
+        .title_deg
+        {
+          text-align: center;
+          font-size: 20px;
+          font-weight: bold;
+          padding-bottom: 30px;
+        }
+        .table_deg
+        {
+          border: 2px solid blue;
+          width: 100%;
+          margin: auto;
+          /*font-size: 40px;*/
+          text-align: center;
+          background-color: #321F28;
+        }
+
 	</style>
 
     <!-- <link rel="shortcut icon" href="admin/assets/images/favicon.png" /> -->
@@ -61,10 +102,10 @@
 
 	            @endif
 
-	            <h1 class="font_size">Show Product</h1>
+	            <h1 class="font_size">Product List</h1>
 
-	          	<table class="center">
-	          		<tr class="th_color">
+	          	<table class="table_deg">
+	          		<tr class="th_deg">
 	          			<th class="th_d">Product Title</th>
 	          			<th class="th_d">Description</th>
 	          			<th class="th_d">Image</th>

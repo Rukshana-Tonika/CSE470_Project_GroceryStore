@@ -65,7 +65,7 @@
                         </div>
                       </div>
                     </div> -->
-                    <!-- <h6 class="text-muted font-weight-normal">Revenue current</h6> -->
+                    <h6 class="text-muted font-weight-normal">Revenue current</h6>
                   <!-- </div>
                 </div> -->
               <!-- </div> -->
@@ -110,7 +110,7 @@
                 </div>
               </div> -->
             <!-- </div> -->
-            <!-- <div class="row">
+           <!--  <div class="row">
               <div class="col-md-4 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
@@ -238,8 +238,8 @@
                   </div>
                 </div>
               </div>
-            </div> -->
-            <!-- <div class="row">
+            </div>
+            <div class="row">
               <div class="col-sm-4 grid-margin">
                 <div class="card">
                   <div class="card-body">
@@ -297,8 +297,10 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row ">
+            </div> -->
+
+
+            <!-- <div class="row ">
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
@@ -435,8 +437,11 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
+            </div> -->
+
+
+            
+           <!--  <div class="row">
               <div class="col-md-6 col-xl-4 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
@@ -595,8 +600,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
+            </div> -->
+            <!-- <div class="row">
               <div class="col-12">
                 <div class="card">
                   <div class="card-body">
@@ -678,7 +683,7 @@
           <!-- partial -->
         <!-- </div> -->
         <!-- main-panel ends -->
-      </div>
+      <!-- </div> -->
       <!-- page-body-wrapper ends -->
   <!--   </div> -->
   <!-- <div class="col-12 grid-margin stretch-card">
@@ -688,10 +693,10 @@
                       <!-- <div class="col-4 col-sm-3 col-xl-2"> -->
                         <!-- <img src="admin/assets/images/dashboard/download (2).jpg" alt=""> -->
                       <!-- </div> -->
-                     <!--  <div class="col-5 col-sm-7 col-xl-8 p-0">
+                      <!-- <div class="col-5 col-sm-7 col-xl-8 p-0">
                         <h4 class="mb-1 mb-sm-0">Want even more features?</h4>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div> -->
+                </div> -->
+              </div>

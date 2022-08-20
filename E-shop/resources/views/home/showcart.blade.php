@@ -43,7 +43,8 @@
       		border: 2px solid #FFCD00;
       	}
       	.th_deg
-      	{font-size: 20px;
+      	{
+          font-size: 20px;
       		padding: 10px;
       		background: #FFCD00;
       	}

@@ -5,26 +5,34 @@
    @include('admin.css')
 
    <style type="text/css">
-   	.center
+   	    .center
         {
           margin: auto;
-          width: 70%;
+          width: 60%;
           text-align: center;
           padding: 30px;
         }
+        .font_size
+        {
+            text-align: center;
+            font-size: 40px;
+            padding-bottom: 40px;
+        } 
         table,th,td
         {
-          border: 1px solid grey;
+          border: 2px solid #864879;
         }
         .th_deg
         {/*font-size: 20px;
           padding: 5px;*/
-          background: #e8ca87;
+          background: #31112C;
         }
         .img_deg
         {
-          height: 50px;
-          width:  70px;
+          /*height: 70px;
+          width:  100px;*/
+          width: 110px;
+          height: 100px;
         }
       /*.table_deg*/
         .title_deg
@@ -32,14 +40,19 @@
           text-align: center;
           font-size: 20px;
           font-weight: bold;
-          padding-bottom: 50px;
+          padding-bottom: 30px;
         }
         .table_deg
         {
           border: 2px solid blue;
-          width: 70%;
+          width: 100%;
           margin: auto;
           text-align: center;
+          background-color: #321F28;
+        }
+        .deliver
+        {
+          color: #FFBD69;
         }
 
    </style>
@@ -56,6 +69,9 @@
 
           <div class="content-wrapper">
 
+        <h1 class="font_size">Order list</h1>
+
+
           	@if(session()->has('message'))
 
             <div class="alert alert-success">
@@ -68,7 +84,9 @@
 
             @endif
 
-          	<h1 class="title_deg">Order List</h1>
+
+        <h1 class="font_size">Order list</h1>
+
 
           	<table class="table_deg">
 
@@ -80,11 +98,11 @@
           			<th style="padding: 10px;">Address</th>
           			<th style="padding: 10px;">Product Title</th>
           			<th style="padding: 10px;">Quantity</th>
-          			<th style="padding: 10px;">Price</th>
+          			<th style="padding: 10px;">Price(Tk)</th>
           			<th style="padding: 10px;">Payment Status</th>
           			<th style="padding: 10px;">Delivery Status</th>
           			<th style="padding: 10px;">Image</th>
-                <th style="padding: 10px;">Delivered</th>
+                <th style="padding: 10px;">Action</th>
           			<!-- <th style="padding: 10px;">Action</th> -->
           			
 
@@ -113,7 +131,13 @@
                   <a class="btn btn-primary" onclick="return confirm('Are you sure the product is delivered?')"href="{{url('delivered',$order->id)}}">Delivered</a>
 
                   @else
-                  <p style="color: green">Delivered</p>
+                  <!-- <p style="color: #519872">Delivered</p> -->
+                  <!-- <b>
+
+                  </b> -->
+                  <p>
+                  <h6 class="deliver">Done</h6>
+                  </p>
 
                   @endif
                 </td>

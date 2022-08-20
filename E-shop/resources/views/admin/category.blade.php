@@ -5,7 +5,7 @@
     @include('admin.css')
     <style type="text/css">
     
-	    .div_center{
+	    /*.div_center{
 	      text-align: center;
 	      padding-top: 40px;
 
@@ -13,7 +13,7 @@
 	    .h2_font{
 	      font-size: 30px;
 	      padding-bottom: 30px;
-	    }
+	    }*/
 	    .input_color{
 	      color: black;
 	    }
@@ -23,9 +23,51 @@
 	      width: 50%;
 	      text-align: center;
 	      margin-top: 30px;
-	      border: 3px solid white;
+        margin-bottom: 50px;
+	      /*border: 3px solid white;*/
+        padding-top: 40px;
 
 	    }
+
+        .font_size
+        {
+            text-align: center;
+            font-size: 40px;
+            color: #31112C;
+            padding-bottom: 40px;
+        } 
+        table,th,td
+        {
+          border: 2px solid #864879;
+        }
+        .th_deg
+        {
+          font-size: 20px;
+          padding: 5px;
+          background: #31112C;
+        }
+        .img_deg
+        {
+          height: 70px;
+          width:  100px;
+        }
+      /*.table_deg*/
+        .title_deg
+        {
+          text-align: center;
+          font-size: 20px;
+          font-weight: bold;
+          padding-bottom: 30px;
+        }
+        .table_deg
+        {
+          border: 2px solid #321F28;
+          width: 60%;
+          margin: auto;
+          text-align: center;
+          background-color: #321F28;
+        }
+
  	  </style>
 
     <!-- End layout styles -->
@@ -54,22 +96,23 @@
 
             @endif
 
-          	<div class="div_center">
-
-              <h2 class="h2_font"> Add Category</h2>
+          	<div class="center">
+<br>
+              <h2 class="title_deg"> Add Category </h2>
 
               <form action="{{url('/add_category')}}" method="POST">
 				      
               @csrf
-
+<br>
       				<input class="input_color" type="text" name="category" placeholder="Enter category name">
-      				<input type="submit" class="btn btn-primary" name="Submit" value="Add Category">
+              <br> <br>
+      				<input type="submit" class="btn btn-primary" name="Submit" value="Add">
 
               </form>
           	</div>
 
-          	<table class="center">
-              <tr>
+          	<table class="table_deg">
+              <tr class="th_deg">
                 <td>Category Name</td>
                 <td>Action</td>
               </tr>
@@ -91,6 +134,7 @@
 
           </div>
     	</div>
+
     <!-- container-scroller -->
     @include('admin.script')
     <!-- End custom js for this page -->

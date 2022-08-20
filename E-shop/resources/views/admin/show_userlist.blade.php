@@ -12,6 +12,7 @@
    		border: 2px solid white;
    		text-align: center;
         margin-top: 40px;
+		background-color: #321F28;
    	}
    	.font_size
 	{
@@ -26,11 +27,15 @@
 	}
 	.th_color
 	{
-		background: #5ca16f; 
+		/*background: #5ca16f;*/
+		/*background: #734046;*/
+		background: #31112C;
+
 	}
 	.th_d
 	{
 		padding: 30px;
+
 	}
 	</style>
 
@@ -61,17 +66,18 @@
 
 	            @endif
 
-	            <h1 class="font_size">Show user list</h1>
+	            <h1 class="font_size">User list</h1>
 
 	          	<table class="center">
 	          		<tr class="th_color">
-	          			<th class="th_d">Id</th>
+	          			<th class="th_d">ID</th>
 	          			<th class="th_d">Name</th>
 	          			<th class="th_d">Email</th>
 	          			<th class="th_d">Usertype</th>
 	          			<th class="th_d">Phone</th>
 	          			<th class="th_d">Address</th>
 	          			<th class="th_d">Action</th>
+	          			<th class="th_d">Admin</th>
 	          		</tr>
 
 	          		@foreach($user as $user)

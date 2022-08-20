@@ -53,17 +53,17 @@
               </div>
             </div>
           </li>
-          <li class="nav-item nav-category">
+          <!-- <li class="nav-item nav-category"> -->
             <!-- <span class="nav-link">Navigation</span> -->
-          </li>
-          <li class="nav-item menu-items">
+          <!-- </li> -->
+          <!-- li class="nav-item menu-items">
             <a class="nav-link" href="index.html">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
-              </span>
+              </span> -->
               <!-- <span class="menu-title">Dashboard</span> -->
-            </a>
-          </li>
+            <!-- </a> -->
+          <!-- </li> -->
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
@@ -90,8 +90,18 @@
           </li>
 
 
-
           <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('show_user')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">User List</span>
+            </a>
+          </li>
+
+
+
+          <!-- <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
@@ -105,7 +115,7 @@
                 <li class="nav-item"> <a class="nav-link" href="{{url('/show_user')}}">Show User</a></li>
               </ul>
             </div>
-          </li>
+          </li> -->
 
                 <!--  -->
           <!-- <li class="nav-item menu-items">
@@ -117,14 +127,14 @@
             </a>
           </li> -->
 
-          <li class="nav-item menu-items">
+          <!-- <li class="nav-item menu-items">
             <a class="nav-link" href="{{url('up_userlist')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
               <span class="menu-title">Update Userlist</span>
             </a>
-          </li>
+          </li> -->
 
 
           <li class="nav-item menu-items">
@@ -132,7 +142,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Order</span>
+              <span class="menu-title">Order List</span>
             </a>
           </li>
 
