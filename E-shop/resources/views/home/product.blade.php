@@ -101,9 +101,9 @@
 
                         @else
                         <h6 style="color: blue">
-                           Price
+                           <!-- Price -->
                            <br>
-                           ${{$products->price}}
+                           Tk {{$products->price}}
                         </h6>
 
                         @endif

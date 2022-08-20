@@ -85,7 +85,7 @@
           			<th style="padding: 10px;">Delivery Status</th>
           			<th style="padding: 10px;">Image</th>
                 <th style="padding: 10px;">Delivered</th>
-          			<th style="padding: 10px;">Action</th>
+          			<!-- <th style="padding: 10px;">Action</th> -->
           			
 
 
@@ -119,9 +119,9 @@
                 </td>
 
           			
-          			<td>
+          			<!-- <td>
           				<a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{url('delete_order',$order->id)}}">Delete Order</a>
-          			</td>
+          			</td> -->
           			
           		</tr>
 

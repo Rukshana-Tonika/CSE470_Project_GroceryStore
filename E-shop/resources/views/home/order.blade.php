@@ -37,6 +37,7 @@
   	    font-size: 40px;
         color: red;
   	    padding-bottom: 40px;
+        /*font-style: bold;*/
   	} 
   	.image_size
   	{
@@ -47,17 +48,21 @@
   	{
   		background: #e8ca87; 
   	}*/
+    /*.th_rowname
+    {
+      font-style: bold;
+    }*/
   	.th_deg
   	{
   		padding: 10px;
-      background-color: #e8ca87; 
-      border: 1px solid #e8ca87;
+      background-color: #FFCD00; 
+      /*border: 1px solid #FFCD00;*/
       font-size: 20px;
       font-weight: bold;
   	}
     table,th,td
     {
-      border: 2px solid #e8ca87;
+      border: 2px solid #FFCD00;
     }
 
 	</style>
@@ -126,9 +131,9 @@
       @include('home.footer')
       <!-- footer end -->
       <div class="cpy_">
-         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
+         <p class="mx-auto">© 2022 All Rights Reserved By <a href="https://html.design/">Rukshana Amin Tonika</a><br>
          
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+            <!-- Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a> -->
          
          </p>
       </div>

@@ -33,17 +33,19 @@
         {
             text-align: center;
             font-size: 40px;
-            color: red;
+            /*color: red;*/
             padding-bottom: 40px;
+            color: #DC4712;
+            font-style: bold;
         } 
       	table,th,td
       	{
-      		border: 2px solid #e8ca87;
+      		border: 2px solid #FFCD00;
       	}
       	.th_deg
       	{font-size: 20px;
       		padding: 10px;
-      		background: #e8ca87;
+      		background: #FFCD00;
       	}
       	.img_deg
       	{
@@ -52,9 +54,10 @@
       	}
       	.total_deg
     	{
-    		font-size: 20px;
+    		font-size: 30px;
     		padding: 40px;
-        color: blue;
+        color: #DC4712;
+        font-style: bold;
     	}
 
       </style>

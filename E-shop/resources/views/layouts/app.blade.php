@@ -9,6 +9,13 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <!-- <link rel="stylesheet" href="https://fonts.bunny.net/family/almendra" type="text/css" href="">
+        <link href="https://fonts.bunny.net/css" rel="stylesheet" /> -->
+
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap"> -->
+
+        <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet"> -->
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
