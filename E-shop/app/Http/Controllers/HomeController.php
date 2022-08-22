@@ -33,6 +33,7 @@ class HomeController extends Controller
     	else
     	{
     		$product=Product::paginate(3);
+        
     		return view('home.userpage',compact('product'));
     	}
     }
@@ -57,56 +58,110 @@ class HomeController extends Controller
 
            $product_exist_id=cart::where('product_id','=',$id)->where('user_id','=',$userid)->get('id')->first();
 
-           if ($product_exist_id) 
-           {
-                $cart=cart::find($product_exist_id)->first();
-                $quantity=$cart->quantity;
-                $cart->quantity = $quantity + $request->quantity;
 
-                if($product->discount_price)
-                 {
-                      $cart->price= $product->discount_price * $cart->quantity;
-                 }
-                 else
-                 {
-                      $cart->price= $product->price * $cart->quantity;
-                 }
-
-                $cart->save();
-
-                return redirect()->back()->with('message','Product Added Sucessfully!');
-
-
-           }
-
-           else
-           {
-               $cart=new cart;
-
-               $cart->name=$user->name;
-               $cart->email=$user->email;
-               $cart->phone=$user->phone;
-               $cart->address=$user->address;
-               $cart->user_id=$user->id;
-               $cart->product_title=$product->title;
-
-               if($product->discount_price)
+          if ($product->quantity > $request->quantity) {
+              if ($product_exist_id) 
                {
-                    $cart->price=$product->discount_price * $request->quantity;
+                    $cart=cart::find($product_exist_id)->first();
+                    $quantity=$cart->quantity;
+                    $cart->quantity = $quantity + $request->quantity;
+
+                    if($product->discount_price)
+                     {
+                          $cart->price= $product->discount_price * $cart->quantity;
+                     }
+                     else
+                     {
+                          $cart->price= $product->price * $cart->quantity;
+                     }
+
+                    $cart->save();
+
+                    return redirect()->back()->with('message','Product Added Sucessfully!');
                }
                else
                {
-                    $cart->price=$product->price * $request->quantity;
+                     $cart=new cart;
+
+                     $cart->name=$user->name;
+                     $cart->email=$user->email;
+                     $cart->phone=$user->phone;
+                     $cart->address=$user->address;
+                     $cart->user_id=$user->id;
+                     $cart->product_title=$product->title;
+
+                     if($product->discount_price)
+                     {
+                          $cart->price=$product->discount_price * $request->quantity;
+                     }
+                     else
+                     {
+                          $cart->price=$product->price * $request->quantity;
+                     }
+                     
+                     $cart->image=$product->image;
+                     $cart->product_id=$product->id;
+
+                     $cart->quantity=$request->quantity;
+                     $cart->save();
+
+                     return redirect()->back()->with('message','Product Added Sucessfully!');
                }
+            # code...
+          }
+          else
+          {
+            return redirect()->back()->with('message','Not enough product available!');
+          }
+// 
+// 
+           // if ($product_exist_id) 
+           // {
+           //      $cart=cart::find($product_exist_id)->first();
+           //      $quantity=$cart->quantity;
+           //      $cart->quantity = $quantity + $request->quantity;
+
+           //      if($product->discount_price)
+           //       {
+           //            $cart->price= $product->discount_price * $cart->quantity;
+           //       }
+           //       else
+           //       {
+           //            $cart->price= $product->price * $cart->quantity;
+           //       }
+
+           //      $cart->save();
+
+           //      return redirect()->back()->with('message','Product Added Sucessfully!');
+           // }
+           // else
+           // {
+           //     $cart=new cart;
+
+           //     $cart->name=$user->name;
+           //     $cart->email=$user->email;
+           //     $cart->phone=$user->phone;
+           //     $cart->address=$user->address;
+           //     $cart->user_id=$user->id;
+           //     $cart->product_title=$product->title;
+
+           //     if($product->discount_price)
+           //     {
+           //          $cart->price=$product->discount_price * $request->quantity;
+           //     }
+           //     else
+           //     {
+           //          $cart->price=$product->price * $request->quantity;
+           //     }
                
-               $cart->image=$product->image;
-               $cart->product_id=$product->id;
+           //     $cart->image=$product->image;
+           //     $cart->product_id=$product->id;
 
-               $cart->quantity=$request->quantity;
-               $cart->save();
+           //     $cart->quantity=$request->quantity;
+           //     $cart->save();
 
-               return redirect()->back()->with('message','Product Added Sucessfully!');
-           }   
+           //     return redirect()->back()->with('message','Product Added Sucessfully!');
+           // }   
         }
         else
         {
@@ -146,6 +201,7 @@ class HomeController extends Controller
 
         foreach ($data as $data) {
            $order=new order;
+
            $order->name=$data->name;
            $order->email=$data->email;
            $order->phone=$data->phone;

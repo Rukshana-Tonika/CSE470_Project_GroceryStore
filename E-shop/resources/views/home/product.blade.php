@@ -62,7 +62,8 @@
 
                               <div class="col-md-4" style="padding-top : 20px">
                                  <input type="submit" value="Add To Cart">
-                              </div>
+
+                                 </div>
                               
                               </div>
 

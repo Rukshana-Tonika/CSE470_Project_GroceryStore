@@ -50,6 +50,19 @@
 
 
 
+            @if(session()->has('message'))
+
+               <div class="alert alert-success">
+
+                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+
+                 {{session()->get('message')}}
+
+               </div>
+
+            @endif
+
+            
       <div class="col-sm-6 col-md-4 col-lg-4" style="margin: auto; width: 50%  ">
                   <div class="box">
                      <div class="option_container">
