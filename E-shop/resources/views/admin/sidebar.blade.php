@@ -100,6 +100,16 @@
           </li>
 
 
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('show_admin')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Admin List</span>
+            </a>
+          </li>
+
+
 
           <!-- <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">

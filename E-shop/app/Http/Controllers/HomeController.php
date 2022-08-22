@@ -32,12 +32,11 @@ class HomeController extends Controller
     	}
     	else
     	{
-    		// return view('home.userpage');
-    		// return view('dashboard');
     		$product=Product::paginate(3);
     		return view('home.userpage',compact('product'));
     	}
     }
+
 
 
     public function product_details($id)
@@ -47,7 +46,7 @@ class HomeController extends Controller
     }
 
 
-    public function add_cart(Request $request,$id)
+    public function add_cart(Request $request, $id)
     {
         if(Auth::id())
         {
@@ -60,18 +59,17 @@ class HomeController extends Controller
 
            if ($product_exist_id) 
            {
-
                 $cart=cart::find($product_exist_id)->first();
                 $quantity=$cart->quantity;
-                $cart->quantity = $quantity+ $request->quantity;
+                $cart->quantity = $quantity + $request->quantity;
 
                 if($product->discount_price)
                  {
-                      $cart->price=$product->discount_price * $cart->quantity;
+                      $cart->price= $product->discount_price * $cart->quantity;
                  }
                  else
                  {
-                      $cart->price=$product->price * $cart->quantity;
+                      $cart->price= $product->price * $cart->quantity;
                  }
 
                 $cart->save();
@@ -83,39 +81,37 @@ class HomeController extends Controller
 
            else
            {
-                $cart=new cart;
+               $cart=new cart;
 
-                 $cart->name=$user->name;
-                 $cart->email=$user->email;
-                 $cart->phone=$user->phone;
-                 $cart->address=$user->address;
-                 $cart->user_id=$user->id;
-                 $cart->product_title=$product->title;
+               $cart->name=$user->name;
+               $cart->email=$user->email;
+               $cart->phone=$user->phone;
+               $cart->address=$user->address;
+               $cart->user_id=$user->id;
+               $cart->product_title=$product->title;
 
-                 if($product->discount_price)
-                 {
-                      $cart->price=$product->discount_price * $request->quantity;
-                 }
-                 else
-                 {
-                      $cart->price=$product->price * $request->quantity;
-                 }
-                 
-                 $cart->image=$product->image;
-                 $cart->product_id=$product->id;
+               if($product->discount_price)
+               {
+                    $cart->price=$product->discount_price * $request->quantity;
+               }
+               else
+               {
+                    $cart->price=$product->price * $request->quantity;
+               }
+               
+               $cart->image=$product->image;
+               $cart->product_id=$product->id;
 
-                 $cart->quantity=$request->quantity;
-                 $cart->save();
+               $cart->quantity=$request->quantity;
+               $cart->save();
 
-                 return redirect()->back()->with('message','Product Added Sucessfully!');
-           }
-           
+               return redirect()->back()->with('message','Product Added Sucessfully!');
+           }   
         }
         else
         {
             return redirect('login');
         }
-
     }
 
 
@@ -123,11 +119,9 @@ class HomeController extends Controller
 
         if(Auth::id())
         {
-            $id=Auth::user()->id;
-        
-        // $id=Auth::user()->id;
-        $cart=cart::where('user_id','=',$id)->get();
-        return view('home.showcart',compact(('cart')));
+            $id=Auth::user()->id; 
+            $cart=cart::where('user_id','=',$id)->get();
+            return view('home.showcart',compact(('cart')));
         }
         else
         {
@@ -198,10 +192,10 @@ class HomeController extends Controller
     public function cancel_order($id)
     {
         $order=order::find($id);
-        $order->delivery_status=" You haved canceled the order ";
+        $order->delivery_status=" Customer have canceled the order ";
         $order->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('message','The order is canceled.');
     }
 
 
@@ -217,7 +211,7 @@ class HomeController extends Controller
 
     public function products()
     {
-      $product=Product::paginate(3);
+      $product=Product::paginate(10);
      
       return view('home.all_product', compact('product'));
     }

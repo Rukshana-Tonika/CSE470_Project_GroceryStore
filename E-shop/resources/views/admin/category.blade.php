@@ -19,6 +19,7 @@
 	    }
 
 	    .center{
+        /*background-color: #C689C6;*/
 	      margin: auto;
 	      width: 50%;
 	      text-align: center;
@@ -96,7 +97,7 @@
 
             @endif
 
-          	<div class="center">
+          <div class="center">
 <br>
               <h2 class="title_deg"> Add Category </h2>
 
@@ -107,6 +108,8 @@
       				<input class="input_color" type="text" name="category" placeholder="Enter category name">
               <br> <br>
       				<input type="submit" class="btn btn-primary" name="Submit" value="Add">
+
+              <br>
 
               </form>
           	</div>
@@ -134,6 +137,7 @@
 
           </div>
     	</div>
+    <!-- </div> -->
 
     <!-- container-scroller -->
     @include('admin.script')

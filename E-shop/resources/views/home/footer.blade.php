@@ -4,7 +4,7 @@
                <div class="col-md-4">
                    <div class="full">
                       <div class="logo_footer">
-                        <a href="#"><img width="210" src="images/41628-4-groceries-hd-image-free-png.png" alt="#" /></a>
+                        <a href="#"><img width="210" src="images/logo_transparent(2).png" alt="#" /></a>
                       </div>
                       <div class="information_f">
                         <p><strong>ADDRESS:</strong> 28 hite tower, Street Name Dhaka City, BD</p>

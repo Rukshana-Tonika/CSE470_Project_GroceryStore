@@ -9,8 +9,13 @@
          width: 80%;
          /*border: 2px solid white;*/
       padding: 30px;
+      /*font-size: 15px;*/
          text-align: center;
       /*margin-top: 40px;*/
+      }
+      .font_size
+      {
+         font-size: 30px;
       }
       .color
       {
@@ -49,7 +54,7 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="center">
-                           <a href="{{url('product_details',$product->id)}} " class="option1">
+                           <a href="{{url('product_details',$product->id)}} " class="font_size">
                            Product Details
                            </a>
 
@@ -88,8 +93,9 @@
                         @endif
 
                         <h6> Product Category :{{$product->category}}</h6>
-                        <h6> Product Details :{{$product->description}}</h6>
-                        <h6> Available Quantity :{{$product->quantity}}</h6>
+                        <!-- <h6> Product Details :{{$product->description}}</h6> -->
+                        <h6>{{$product->description}}</h6>
+                        <!-- <h6> Available Quantity :{{$product->quantity}}</h6> -->
 
                         @if($product->quantity==0)
                         <h6 style="color: red">Not available</h6>

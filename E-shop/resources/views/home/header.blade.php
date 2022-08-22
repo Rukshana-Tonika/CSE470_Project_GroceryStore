@@ -10,7 +10,7 @@
                   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                   <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
 
-                  <a class="navbar-brand" href="{{url('/')}}"><img width="300px" src="images/41628-4-groceries-hd-image-free-png.png" alt="#" /></a>
+                  <a class="navbar-brand" href="{{url('/')}}"><img width="200px" src="images/logo_transparent(2).png" alt="#"></a>
                   
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
@@ -68,7 +68,7 @@
 
                         @else
                         <li class="nav-item">
-                           <a class="btn btn-primary" id="logincss" href="{{ route('login') }}">Login</a>
+                           <a class="btn btn-success" id="logincss" href="{{ route('login') }}">Login</a>
                         </li>
                         
 

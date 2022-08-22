@@ -10,6 +10,7 @@
       {
         text-align: center;
         padding-top: 40px;
+        background-color: #864879;
 
       }  
       .font_size
@@ -54,13 +55,13 @@
 
             @if(session()->has('message'))
 
-            <div class="alert alert-success">
+              <div class="alert alert-success">
 
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
 
-              {{session()->get('message')}}
+                {{session()->get('message')}}
 
-             </div>
+              </div>
 
             @endif
               
@@ -73,52 +74,52 @@
               @csrf
 
               <div class="div_design">
-              <label>Product Title</label>
-              <input class="text_color" type="text" name="title" placeholder="Write a title" required="">
+                <label>Product Title</label>
+                <input class="text_color" type="text" name="title" placeholder="Write a title" required="">
               </div>
 
              
 
               <div class="div_design">
-              <label>Product Description</label>
-              <input class="text_color" type="text" name="Description" placeholder="Write a description" required="">
+                <label>Product Description</label>
+                <input class="text_color" type="text" name="Description" placeholder="Write a description" required="">
               </div>
 
               <div class="div_design">
-              <label>Product Price</label>
-              <input class="text_color" type="number" name="Price" placeholder="Write a Price" required="">
-
-              </div>
-              <div class="div_design">
-              <label>Discount</label>
-              <input class="text_color" type="number" name="Discount" placeholder="Discount">
+                <label>Product Price</label>
+                <input class="text_color" type="number" name="Price" placeholder="Write a Price" required="">
               </div>
 
+              <div class="div_design">
+                <label>Discounted Price</label>
+                <input class="text_color" type="number" name="Discount" placeholder="Discount">
+              </div>
+
 
               <div class="div_design">
-              <label>Product Quantity</label>
-              <input class="text_color" type="number" min="0" name="Quantity" placeholder=" Quantity" required="">
+                <label>Product Quantity</label>
+                <input class="text_color" type="number" min="0" name="Quantity" placeholder=" Quantity" required="">
               </div>
               
               <div class="div_design">
-              <label>Product Category</label>
-              <select class="text_color" name="Category" required="">
-                <option value="" selected="">Add a Category Here</option>
-                @foreach($category as $category)
-                <option>{{$category->category_name}}</option>
+                <label>Product Category</label>
+                <select class="text_color" name="Category" required="">
+                  <option value="" selected="">Add a Category Here</option>
+                  @foreach($category as $category)
+                  
+                  <option>{{$category->category_name}}</option>
 
-                @endforeach
-              </select>
+                  @endforeach
+                </select>
               </div>
 
               <div class="div_design">
-              <label>Product Image</label>
-              <input type="file" name="image" required="">
+                <label>Product Image</label>
+                <input type="file" name="image" required="">
               </div>
 
               <div class="div_design">
-              
-              <input type="submit" value="Add Product"class="btn btn-primary">
+                <input type="submit" value="Add Product"class="btn btn-dark">
               </div>
 
               </form>
@@ -129,6 +130,7 @@
 
           </div>
         </div>
+
         
     @include('admin.script')
     <!-- End custom js for this page -->

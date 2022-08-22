@@ -62,6 +62,8 @@ route::get('/delivered/{id}', [AdminController::class,'delivered']);
 route::get('/show_user', [AdminController::class,'show_user']);
 route::get('/delete_user/{id}', [AdminController::class,'delete_user']);
 route::get('/update_admin/{id}', [AdminController::class,'update_admin']);
+route::get('/show_admin', [AdminController::class,'show_admin']);
+
 // route::get('/up_userlist/{id}', [AdminController::class,'up_userlist']);
 
 

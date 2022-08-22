@@ -17,6 +17,8 @@ class AdminController extends Controller
     	$data = category::all();
 
     	return view('admin.category', compact('data'));
+        // $category=category::all();
+        // return view('admin.category',compact('category'));
     }
 
     public function add_category(Request $request)  //Request cz POST method
@@ -61,9 +63,11 @@ class AdminController extends Controller
 
 
         $product->save();
-        return redirect()->back()->with('message','Product Added Successfully');
-  
+                return redirect()->back()->with('message','Product Added Successfully');
+
+        // return view('admin.show_product',compact('product'));
     }
+  
 
     public function show_product()
     {
@@ -79,6 +83,7 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message','Product Deleted Successfully');
     }
+
     public function update_product($id)
     {
         $product=product::find($id);
@@ -111,7 +116,8 @@ class AdminController extends Controller
     }
 
 
-    public function order(){
+    public function order()
+    {
 
         $order=order::all();
         return view('admin.order',compact('order'));
@@ -139,20 +145,6 @@ class AdminController extends Controller
 
 
 
-
-
-    // public function add_user()
-    // {
-    //     $user = new User();
-    //     $user->username = 'something';
-    //     $user->password = Hash::make('userpassword');
-    //     $user->email = 'useremail@something.com';
-    //     $user->save();
-
-    //     return view('auth.register',compact('user'));
-    // }
-
-
     public function show_user()
     {
         $user=user::all();
@@ -171,36 +163,21 @@ class AdminController extends Controller
     public function update_admin($id)
     {
         $user=user::find($id);
-         $user->usertype="1";
+        $user->usertype="1";
 
         $user->save();
         return redirect()->back()->with('message','User Details Updated Successfully');
+    }
 
+    public function show_admin()
+    {
+        $user=user::all();
+        // return view('admin.show_product');
+        return view('admin.show_adminlist',compact('user'));
     }
 
 
-    // public function up_userlist($id)
-    // {
-    //     $user=user::find($id);
 
-    //     return view('admin.up_userlist',compact('user'));
-    // }
-
-    // public function update_product_confirm(Request $request,$id)
-    // {
-    //     $product=product::find($id);
-    //     $product->title=$request->title;
-    //     $product->description=$request->Description;
-    //     $product->category=$request->Category;
-    //     $product->price=$request->Price;
-    //     $product->discount_price=$request->Discount;
-    //     $product->quantity=$request->Quantity;
-        
-
-    //     $product->save();
-    //     return redirect('/show_userlist')->with('message','Product Updated Successfully');
-
-    // }
     
 
 }

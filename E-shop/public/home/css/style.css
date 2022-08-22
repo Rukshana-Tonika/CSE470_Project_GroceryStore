@@ -5,6 +5,8 @@
 #logincss{
   margin-right: 10px;
   margin-left: 10px;
+    /*background-color: #EFF6A5; */
+
 }
 
 
@@ -990,7 +992,7 @@ li.nav-item ul li a:hover, li.nav-item ul li a:focus {
 /** footer **/
 
 footer {
-    background: #f8f8f8;
+    background: #EFF6A5;
     padding: 90px 0 70px;
 }
 

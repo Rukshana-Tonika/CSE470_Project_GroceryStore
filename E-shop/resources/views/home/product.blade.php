@@ -62,8 +62,7 @@
 
                               <div class="col-md-4" style="padding-top : 20px">
                                  <input type="submit" value="Add To Cart">
-
-                                 </div>
+                              </div>
                               
                               </div>
 
@@ -102,8 +101,8 @@
                         @else
                         <h6 style="color: blue">
                            <!-- Price -->
-                           <br>
-                           Tk {{$products->price}}
+                           <!-- <br> -->
+                           Tk{{$products->price}}
                         </h6>
 
                         @endif
