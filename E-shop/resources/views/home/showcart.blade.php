@@ -105,10 +105,11 @@
      			<td>Tk {{$cart->price}}</td>
      			<td><img class="img_deg" src="/product/{{$cart->image}}"></td>
      			<td> <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{url('remove_cart',$cart->id)}}">Remove</td>
+        </tr>
+ 			    <?php $totalprice = $totalprice + $cart->price ?>
 
- 			</tr>
- 			<?php $totalprice=$totalprice + $cart->price ?>
- 			@endforeach
+ 			  @endforeach
+
      	</table>
 
 
@@ -119,10 +120,6 @@
      	<div>
      		
      		<a href="{{url('cash_order')}}" class="btn btn-danger"> Click to Order </a>
-     		<!-- <a href="" class="btn btn-danger">Cash on delivery</a> -->
-     		<!-- <a href="" class="btn btn-danger">Cash on delivery</a> -->
-     		
-
 
 
      	</div>

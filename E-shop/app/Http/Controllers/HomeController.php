@@ -59,7 +59,8 @@ class HomeController extends Controller
            $product_exist_id=cart::where('product_id','=',$id)->where('user_id','=',$userid)->get('id')->first();
 
 
-          if ($product->quantity > $request->quantity) {
+          if ($product->quantity >= $request->quantity)
+          {
               if ($product_exist_id) 
                {
                     $cart=cart::find($product_exist_id)->first();
@@ -77,7 +78,10 @@ class HomeController extends Controller
 
                     $cart->save();
 
+                    $product->quantity = Product::where('id','=',$id)->decrement('quantity',$request->quantity); ///
+
                     return redirect()->back()->with('message','Product Added Sucessfully!');
+
                }
                else
                {
@@ -105,63 +109,18 @@ class HomeController extends Controller
                      $cart->quantity=$request->quantity;
                      $cart->save();
 
+                     $product->quantity = Product::where('id','=',$id)->decrement('quantity',$request->quantity); ///
+
                      return redirect()->back()->with('message','Product Added Sucessfully!');
                }
-            # code...
+
           }
+          
           else
           {
             return redirect()->back()->with('message','Not enough product available!');
           }
-// 
-// 
-           // if ($product_exist_id) 
-           // {
-           //      $cart=cart::find($product_exist_id)->first();
-           //      $quantity=$cart->quantity;
-           //      $cart->quantity = $quantity + $request->quantity;
 
-           //      if($product->discount_price)
-           //       {
-           //            $cart->price= $product->discount_price * $cart->quantity;
-           //       }
-           //       else
-           //       {
-           //            $cart->price= $product->price * $cart->quantity;
-           //       }
-
-           //      $cart->save();
-
-           //      return redirect()->back()->with('message','Product Added Sucessfully!');
-           // }
-           // else
-           // {
-           //     $cart=new cart;
-
-           //     $cart->name=$user->name;
-           //     $cart->email=$user->email;
-           //     $cart->phone=$user->phone;
-           //     $cart->address=$user->address;
-           //     $cart->user_id=$user->id;
-           //     $cart->product_title=$product->title;
-
-           //     if($product->discount_price)
-           //     {
-           //          $cart->price=$product->discount_price * $request->quantity;
-           //     }
-           //     else
-           //     {
-           //          $cart->price=$product->price * $request->quantity;
-           //     }
-               
-           //     $cart->image=$product->image;
-           //     $cart->product_id=$product->id;
-
-           //     $cart->quantity=$request->quantity;
-           //     $cart->save();
-
-           //     return redirect()->back()->with('message','Product Added Sucessfully!');
-           // }   
         }
         else
         {
